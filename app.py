@@ -8,6 +8,11 @@ from tensorflow.keras.layers import GlobalMaxPooling2D
 from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
 from sklearn.neighbors import NearestNeighbors
 import tensorflow as tf
+from huggingface_hub import hf_hub_download
+
+repo_id = "melier/fashion-recommendation-embeddings"  # Replace with your repo
+
+embeddings_path = hf_hub_download(repo_id=repo_id, filename="embeddings.pkl", repo_type="model")
 
 # Load precomputed features and filenames
 feature_list = np.array(pickle.load(open('embeddings.pkl', 'rb')))
