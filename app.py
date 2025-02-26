@@ -10,13 +10,15 @@ from sklearn.neighbors import NearestNeighbors
 import tensorflow as tf
 from huggingface_hub import hf_hub_download
 
-repo_id = "melier/fashion-recommendation-embeddings"  # Replace with your repo
+repo_id = "melier/fashion-recommendation-embeddings"  # Your Hugging Face repo
 
+# Download embeddings.pkl and filenames.pkl from Hugging Face
 embeddings_path = hf_hub_download(repo_id=repo_id, filename="embeddings.pkl", repo_type="model")
+# filenames_path = hf_hub_download(repo_id=repo_id, filename="filenames.pkl", repo_type="model")
 
 # Load precomputed features and filenames
 feature_list = np.array(pickle.load(open(embeddings_path, 'rb')))
-filenames = pickle.load(open('filenames.pkl', 'rb'))
+filenames = pickle.load(open(filenames_path, 'rb'))
 
 # Load ResNet50 model
 model = ResNet50(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
