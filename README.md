@@ -1,5 +1,5 @@
 
-# Fashion Recommender App 👗 [**Fashion Recommender App**](https://fashion-app.streamlit.app/)
+# [**Fashion Recommender App**](https://fashion-app.streamlit.app/) 👗
 
 Welcome to the **Fashion Recommender App**, a platform that helps you discover similar fashion styles based on an image you upload. This app uses advanced machine learning techniques like **ResNet50** for feature extraction and **k-Nearest Neighbors (kNN)** for fashion item similarity matching.
 
