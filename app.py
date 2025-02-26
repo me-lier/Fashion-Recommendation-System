@@ -47,11 +47,11 @@ st.markdown("<p class='subheader'>Find your perfect match! Upload an image and d
 
 repo_id = "melier/fashion-recommendation-embeddings"
 embeddings_path = hf_hub_download(repo_id=repo_id, filename="embeddings.pkl", repo_type="model")
-# filenames_path = hf_hub_download(repo_id=repo_id, filename="filenames.pkl", repo_type="model")
+# filenames_path = "filenames.pkl"
 
 # Load precomputed features
 feature_list = np.array(pickle.load(open(embeddings_path, 'rb')))
-filenames = pickle.load(open(filenames.pkl, 'rb'))
+filenames = pickle.load(open("filenames.pkl", 'rb'))
 
 # Load ResNet50 model
 model = ResNet50(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
