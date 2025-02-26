@@ -15,7 +15,7 @@ repo_id = "melier/fashion-recommendation-embeddings"  # Replace with your repo
 embeddings_path = hf_hub_download(repo_id=repo_id, filename="embeddings.pkl", repo_type="model")
 
 # Load precomputed features and filenames
-feature_list = np.array(pickle.load(open('embeddings.pkl', 'rb')))
+feature_list = np.array(pickle.load(open(embeddings_path, 'rb')))
 filenames = pickle.load(open('filenames.pkl', 'rb'))
 
 # Load ResNet50 model
